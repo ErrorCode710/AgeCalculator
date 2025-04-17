@@ -1,6 +1,4 @@
-Sure! Here's a simple Markdown (`README.md`) template for your **AgeCalculator** project:
 
-```markdown
 # AgeCalculator
 
 AgeCalculator is a simple and user-friendly application designed to calculate your age based on your date of birth. The application takes input for the day, month, and year, and then calculates the exact age in years, months, and days.
