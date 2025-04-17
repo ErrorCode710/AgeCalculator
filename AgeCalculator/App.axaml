@@ -1,0 +1,55 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AgeCalculator.App"
+             xmlns:local="using:AgeCalculator"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+	<Application.Resources>
+		<FontFamily x:Key="PoppinsR">avares://AgeCalculator/Assets/Fonts/Poppins-Regular.ttf#Poppins</FontFamily>
+		<FontFamily x:Key="PoppinsB">avares://AgeCalculator/Assets/Fonts/Poppins-Bold.ttf#Poppins</FontFamily>
+		<FontFamily x:Key="PoppinsBI">avares://AgeCalculator/Assets/Fonts/Poppins-ExtraBoldItalic.ttf#Poppins</FontFamily>
+	</Application.Resources>
+	<Application.Styles>
+		<FluentTheme />
+		<Style Selector="TextBlock.DateLabel">
+			<Setter Property="FontSize" Value="10"/>
+			<Setter Property="FontFamily" Value="{StaticResource PoppinsB}"/>
+			<Setter Property="Foreground" Value="#716f6f"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+		<Style Selector="Border.InputBorder">
+			<Setter Property="BorderBrush" Value="#E8E9EB"/>
+			<Setter Property="BorderThickness" Value="1.5"/>
+			<Setter Property="CornerRadius" Value="3"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Margin" Value="0,5,10,0"/>
+			<Setter Property="Width" Value="80"/>
+		</Style>
+		<Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+			<Setter Property="BorderBrush" Value="#854dff"/>
+		</Style>
+		<Style Selector="TextBox.txtbox1">
+			<Setter Property="MaxLength" Value="2"></Setter>
+			<Setter Property="Margin" Value="0"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="FontFamily" Value="{StaticResource PoppinsB}"/>
+		</Style>
+		<Style Selector="TextBlock.Result">
+			<Setter Property="FontFamily" Value="{StaticResource PoppinsBI}"/>
+			<Setter Property="FontSize" Value="50"></Setter>
+			<Setter Property="Margin" Value="35,0,4,0"></Setter>
+			<Setter Property="Foreground" Value="#854dff"></Setter>
+		</Style>
+		<Style Selector="TextBlock.ResultLabel">
+			<Setter Property="FontFamily" Value="{StaticResource PoppinsBI}"/>
+			<Setter Property="FontSize" Value="50"></Setter>
+			
+		</Style>
+	</Application.Styles>
+
+</Application>

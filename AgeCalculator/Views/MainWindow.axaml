@@ -1,0 +1,134 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AgeCalculator.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AgeCalculator.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AgeCalculator"
+		Background="#f0f0f0">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<Grid Height="350" Width="450" >
+		<Border CornerRadius="15,15,100,10" Background="White" BoxShadow="5 5 10 0 DarkGray">
+		<Grid RowDefinitions="auto,auto,auto,auto">
+			<Grid Grid.Row="1" RowDefinitions="auto,auto" Margin="20">
+				<StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+
+				</StackPanel>
+
+				<Grid Grid.Row="1" ColumnDefinitions="auto,auto,auto,auto" HorizontalAlignment="Center">
+
+					<StackPanel Grid.Column="0" HorizontalAlignment="Center">
+						<TextBlock 
+							Classes="DateLabel"
+							Text="D A Y"
+							></TextBlock>
+						<Border Classes="InputBorder"
+								>
+							<TextBox
+								MaxLength="2"
+						   Classes="txtbox1"
+						   x:Name="DaysInput"
+						     
+						   Watermark="10" />
+						</Border>
+					</StackPanel>
+
+					<StackPanel Grid.Column="1" HorizontalAlignment="Left">
+						<TextBlock
+							Text="M O N T H"
+							Classes="DateLabel"						
+							></TextBlock>
+						<Border Classes="InputBorder">
+							<TextBox
+							Classes="txtbox1"
+							x:Name="MonthInput"
+							
+							Watermark="07" />
+						</Border>
+					</StackPanel>
+
+
+					<StackPanel Grid.Column="2" HorizontalAlignment="Left">
+						<TextBlock
+							Classes="DateLabel"
+							Text="Y E A R"
+							></TextBlock>
+
+						<Border Classes="InputBorder">
+							<TextBox
+							Classes="txtbox1"	
+							MaxLength="4"
+							
+							x:Name="YearsInput"
+							
+							Watermark="2005" />
+						</Border>
+					</StackPanel>
+					<StackPanel Grid.Column="3" >
+						
+						<Button  Content="SUBMIT" 
+								 Margin="10,18,0,0"
+								 FontFamily="{StaticResource Poppins}"
+								 Background="#854dff"
+								 Foreground="white"
+								 Padding="20,10"
+								 Click="getBirthDate"></Button>
+						
+					</StackPanel>
+				</Grid>
+			</Grid>
+
+			<Grid Grid.Row="2">
+				<Border Height="1" Background="#E8E9EB"></Border>
+			</Grid>
+			<Grid Grid.Row="3">
+				<StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock	
+							x:Name="yearsResult"
+							Text="19"
+							Classes="Result"
+							
+							></TextBlock>
+						<TextBlock
+							
+							Text="years"
+								Classes="ResultLabel"
+							></TextBlock>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock
+							x:Name="monthsResult"
+							Text="9"
+								
+							Classes="Result"
+							></TextBlock>
+						<TextBlock
+							Text="months"
+							
+								Classes="ResultLabel"
+							></TextBlock>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock
+							Text="7"
+							x:Name="daysResult"
+							Classes="Result"
+							></TextBlock>
+						<TextBlock
+							Text="days"
+								Classes="ResultLabel"></TextBlock>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+		</Grid>
+		</Border>
+	</Grid>
+</Window>
